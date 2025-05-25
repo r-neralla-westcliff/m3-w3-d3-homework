@@ -1,0 +1,79 @@
+@import "colors";
+@import "nav";
+
+// Global styles
+body {
+  font-family: $body-font;
+  margin: 0;
+}
+
+footer {
+  background-color: $gold;
+  color: $text-dark;
+  padding: 1em;
+  font-family: $body-font;
+}
+
+// Mixin for the button
+@mixin button-style {
+  background-color: $gold;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  color: $white;
+  cursor: pointer;
+  margin-top: 1em;
+}
+
+// Main layout and styles
+main {
+  display: flex;
+  background: $white;
+  width: 90%;
+  margin: 2em auto;
+  box-shadow: 0 0 0 10px $white, 0 0 0 20px $gold;
+
+  #intro-text {
+    background-color: $gray-bg;
+    flex: 1;
+    padding: 2em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    span {
+      font-family: $logo-font;
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 1em;
+    }
+
+    h3 {
+      font-family: $body-font;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: $text-dark;
+    }
+
+    p {
+      font-family: $body-font;
+      font-size: 1rem;
+      margin-top: 1em;
+    }
+
+    .submit-buttton {
+      @include button-style;
+    }
+  }
+
+  #intro-image {
+    flex: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
